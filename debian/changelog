@@ -1,5 +1,53 @@
-template-repository (1.0-1) unstable; urgency=medium
+node-load-json-file (7.0.1-1) unstable; urgency=medium
 
-  * Initial release
+  * Team upload
+  * New upstream version 7.0.1
+  * Update test patches
+  * Build commonjs files using mjs2cjs -a
+  * Add wrapper to provide old API
 
- -- Tsic404 <liuheng@deepin.org>  Sat, 28 Jan 2023 13:46:49 +0800
+ -- Yadd <yadd@debian.org>  Sat, 09 Apr 2022 18:17:47 +0200
+
+node-load-json-file (6.2.0-2) unstable; urgency=medium
+
+  * Team upload
+  * Bump debhelper compatibility level to 13
+  * Modernize debian/watch
+    * Fix GitHub tags regex
+    * Fix filenamemangle
+  * Use dh-sequence-nodejs
+  * Update standards version to 4.6.0, no changes needed.
+  * Drop dependency to nodejs
+
+ -- Yadd <yadd@debian.org>  Tue, 16 Nov 2021 18:17:18 +0100
+
+node-load-json-file (6.2.0-1) unstable; urgency=medium
+
+  * Team upload
+
+  [ Debian Janitor ]
+  * Trim trailing whitespace.
+  * Use secure copyright file specification URI.
+  * Bump debhelper from deprecated 9 to 12.
+  * Set debhelper-compat version in Build-Depends.
+  * Update Vcs-* headers from URL redirect.
+  * Use canonical URL in Vcs-Git.
+  * Set upstream metadata fields: Bug-Database, Bug-Submit, Repository,
+    Repository-Browse.
+
+  [ Xavier Guimard ]
+  * Declare compliance with policy 4.5.0
+  * Add "Rules-Requires-Root: no"
+  * Change section to javascript
+  * Add debian/gbp.conf
+  * Use pkg-js-tools auto install
+  * Enable upstream test using tape instead of ava
+  * New upstream version 6.2.0
+
+ -- Xavier Guimard <yadd@debian.org>  Fri, 29 May 2020 10:21:06 +0200
+
+node-load-json-file (2.0.0-1) unstable; urgency=low
+
+  * Initial release (Closes: #842322)
+
+ -- Pirate Praveen <praveen@debian.org>  Fri, 28 Oct 2016 10:57:44 +0530

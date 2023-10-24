@@ -1,0 +1,42 @@
+Description: replace ava by tape in test
+Author: Xavier Guimard <yadd@debian.org>
+Forwarded: not-needed
+Last-Update: 2022-04-09
+
+--- a/test.js
++++ b/test.js
+@@ -1,6 +1,6 @@
+ import path from 'node:path';
+ import {fileURLToPath} from 'node:url';
+-import test from 'ava';
++import test from 'tape';
+ import {loadJsonFile, loadJsonFileSync} from './index.js';
+ 
+ const __dirname = path.dirname(fileURLToPath(import.meta.url));
+@@ -9,10 +9,12 @@
+ test('async', async t => {
+ 	const data = await loadJsonFile(fixture);
+ 	t.is(data.name, 'load-json-file');
++	t.end();
+ });
+ 
+ test('sync', t => {
+ 	t.is(loadJsonFileSync(fixture).name, 'load-json-file');
++	t.end();
+ });
+ 
+ test('beforeParse option', async t => {
+@@ -20,6 +22,7 @@
+ 		beforeParse: string => string.replace('"name": "load-json-file"', '"name": "foo"'),
+ 	});
+ 	t.is(data.name, 'foo');
++	t.end();
+ });
+ 
+ test('reviver option', async t => {
+@@ -27,4 +30,5 @@
+ 		reviver: (key, value) => key === 'name' ? 'foo' : value,
+ 	});
+ 	t.is(data.name, 'foo');
++	t.end();
+ });
